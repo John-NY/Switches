@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Frame for Power Switches -->
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/pwrFrame"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical">
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:orientation="horizontal">
+	
+		    <ImageButton
+		        android:id="@+id/btnSw1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:onClick="onButton1Click"
+		        android:src="@drawable/off"
+		        android:text="Switch" />
+	
+		    <ImageButton
+		        android:id="@+id/btnSw2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:onClick="onButton2Click"
+		        android:src="@drawable/off"
+		        android:text="Switch" />
+		</LinearLayout> <!-- end strip -->
+	</LinearLayout> <!-- end power frame -->	

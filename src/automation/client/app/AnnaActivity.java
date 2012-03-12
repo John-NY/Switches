@@ -11,10 +11,17 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.util.ArrayList;
 import java.util.List;
  
@@ -24,7 +31,11 @@ import java.util.List;
  */
 public class AnnaActivity extends Activity
 {
- 
+
+	Socket nsocket; //Network Socket
+    InputStream nis; //Network Input Stream
+    OutputStream nos; //Network Output Stream
+
     private static final int REQUEST_CODE = 1234;
     private ListView wordsList;
  
@@ -99,7 +110,31 @@ public class AnnaActivity extends Activity
     }
     
     public void lstSelectionMade(View view) {
+    	SendChatToServer(view);
 		String sSelect = "A selection \"" + ((TextView) view).getText() + "\" has been made!";
 		Toast.makeText(this, sSelect, Toast.LENGTH_SHORT).show();
     }
+    
+
+	public void SendChatToServer(View view)
+	{
+        try
+        {
+            SocketAddress saddr = new InetSocketAddress("192.168.0.55", 9140);
+            nsocket = new Socket();
+            nsocket.connect(saddr, 9140); //10 second connection timeout
+            if (nsocket.isConnected()) {
+            	String cmd = "\"" + ((TextView) view).getText() + "\"";
+                nis = nsocket.getInputStream();
+                nos = nsocket.getOutputStream();
+                nos.write(cmd.getBytes());
+            } 
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
+	}
+
 }

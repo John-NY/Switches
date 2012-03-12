@@ -9,14 +9,17 @@ import java.net.SocketAddress;
 
 import android.app.Activity;
 import android.os.Bundle;
-//import android.view.View;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class PowerActivity extends Activity {
-    Socket nsocket; //Network Socket
+	Socket nsocket; //Network Socket
     InputStream nis; //Network Input Stream
     OutputStream nos; //Network Output Stream
+
+    private Boolean btnState1 = false;
+    private Boolean btnState2 = false;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -27,27 +30,56 @@ public class PowerActivity extends Activity {
     }
     
 	public void onButton1Click(View view) {
-		Toast.makeText(this, "onButton1Click clicked!", Toast.LENGTH_SHORT).show();
+		ImageButton btnSw1 = (ImageButton)findViewById(R.id.btnSw1);
+		btnState1 = SendButtonToggleToServer(btnSw1,btnState1,"printer");
+	}
+	
+	public void onButton2Click(View view) {
+		ImageButton btnSw2 = (ImageButton)findViewById(R.id.btnSw2);
+		btnState2 = SendButtonToggleToServer(btnSw2,btnState2,"node3");
+	}
+	
+	public Boolean SendButtonToggleToServer(ImageButton btnSw, Boolean btnState, String strNode)
+	{
+		String strState; 
+		if (btnState) { 
+			strState = "off"; 
+		} else { 
+			strState = "on"; 
+		}
         try
         {
-            SocketAddress saddr = new InetSocketAddress("192.168.0.55", 9140);
+            SocketAddress saddr = new InetSocketAddress("192.168.0.55", 9001);
             nsocket = new Socket();
-            nsocket.connect(saddr, 9140); //10 second connection timeout
+            nsocket.connect(saddr, 9001); //10 second connection timeout
             if (nsocket.isConnected()) {
-            	String cmd = "\"node3 off\"";
+            	String cmd = "\"" + strNode + " " + strState + "\"";
                 nis = nsocket.getInputStream();
                 nos = nsocket.getOutputStream();
                 nos.write(cmd.getBytes());
-            }
+        		btnState = ButtonPress(btnSw,btnState,strNode);
+            } 
         }
         catch (IOException e)
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
-         } 
+        } 
+		return btnState;
+	}
+
+	public Boolean ButtonPress(ImageButton btnSw, Boolean btnState, String strNode) {
+		if (btnState) 
+		{
+			btnState = false;
+			btnSw.setImageResource(R.drawable.off);
+			Toast.makeText(this, strNode + " off!", Toast.LENGTH_SHORT).show();
+		} else {
+			btnState = true;
+			btnSw.setImageResource(R.drawable.on);
+			Toast.makeText(this, strNode + " on!", Toast.LENGTH_SHORT).show();
+		}
+		return btnState;
 	}
 	
-	public void onButton2Click(View view) {
-		Toast.makeText(this, "onButton2Click clicked!", Toast.LENGTH_SHORT).show();
-	}
 }

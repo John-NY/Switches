@@ -12,16 +12,92 @@
 
 	    <Button
 	        android:id="@+id/btnPlay"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_width="80dip"
+	        android:layout_height="60dip"
 	        android:onClick="onbtnPlayClick"
-	        android:text="Play" />
+	        android:text="Play/Pause" />
 
 	    <Button
-	        android:id="@+id/btnQuit"
+	        android:id="@+id/btnNext"
+	        android:layout_width="80dip"
+	        android:layout_height="60dip"
+	        android:onClick="onbtnNextClick"
+	        android:text="Next Song" />
+	</LinearLayout> <!-- end strip -->
+	    
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    
+	    <Button
+	        android:id="@+id/btnVolDown"
+	        android:layout_width="80dip"
+	        android:layout_height="60dip"
+	        android:onClick="onbtnVolDownClick"
+	        android:text="Vol-" />
+
+	    <Button
+	        android:id="@+id/btnVolUp"
+	        android:layout_width="80dip"
+	        android:layout_height="60dip"
+	        android:onClick="onbtnVolUpClick"
+	        android:text="Vol+" />
+	</LinearLayout> <!-- end strip -->
+	    
+    <Button
+        android:id="@+id/btnVolUp"
+        android:layout_width="80dip"
+        android:layout_height="60dip"
+        android:onClick="onbtnChangeStationClick"
+        android:text="Station" />
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:text="------------"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    
+	    <Button
+	        android:id="@+id/btnBan"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:onClick="onbtnQuitClick"
-	        android:text="Quit" />
+	        android:onClick="onbtnBanClick"
+	        android:text="Ban Song" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="30dip"
+        android:layout_height="60dip"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+	    <Button
+	        android:id="@+id/btnLove"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="onbtnLoveClick"
+	        android:text="Love Song" />
+	    
 	</LinearLayout> <!-- end strip -->
+	
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:text="------------"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+    <Button
+        android:id="@+id/btnQuit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onbtnQuitClick"
+        android:text="Kill Server" />
 </LinearLayout> <!-- end power frame -->	

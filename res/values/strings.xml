@@ -4,5 +4,6 @@
     <string name="hello">Hello World, SwitchesActivity!</string>
     <string name="app_name">Switches</string>
     <string name="empty">\"\"</string>
+    <string name="server_ip">64.81.44.52</string>
 
 </resources>

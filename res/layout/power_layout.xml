@@ -10,7 +10,7 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent"
 		    android:orientation="horizontal">
-	
+		    
 		    <ImageButton
 		        android:id="@+id/btnSw1"
 		        android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
 		        android:onClick="onButton1Click"
 		        android:src="@drawable/off"
 		        android:text="Switch" />
-	
+
 		    <ImageButton
 		        android:id="@+id/btnSw2"
 		        android:layout_width="wrap_content"

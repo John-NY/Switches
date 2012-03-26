@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Frame for Power Switches -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+      
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:id="@+id/pwrFrame"
 	    android:layout_width="fill_parent"
@@ -94,4 +101,5 @@
 		        android:textAppearance="?android:attr/textAppearanceLarge" />
 		</LinearLayout> <!-- end printer switch -->
 		
-	</LinearLayout> <!-- end power frame -->	
+	</LinearLayout> <!-- end power frame -->
+</ScrollView>

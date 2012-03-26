@@ -9,11 +9,14 @@ import java.net.SocketAddress;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class PowerActivity extends Activity {
+	
 	Socket nsocket; //Network Socket
     InputStream nis; //Network Input Stream
     OutputStream nos; //Network Output Stream
@@ -93,5 +96,6 @@ public class PowerActivity extends Activity {
 		}
 		return btnState;
 	}
+
 	
 }

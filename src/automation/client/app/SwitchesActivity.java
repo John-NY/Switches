@@ -42,7 +42,15 @@ public class SwitchesActivity extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
 
-        tabHost.setCurrentTab(0);
+        // Create an Intent to launch an Activity for the tab (to be reused)
+        intent = new Intent().setClass(this, ReminderActivity.class);
+
+        // Initialize a TabSpec for each tab and add it to the TabHost
+        spec = tabHost.newTabSpec("reminder").setIndicator("Reminder")
+                      .setContent(intent);
+        tabHost.addTab(spec);
+
+        tabHost.setCurrentTab(3);
     }
 
 }	

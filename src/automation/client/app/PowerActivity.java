@@ -20,6 +20,8 @@ public class PowerActivity extends Activity {
 
     private Boolean btnState1 = false;
     private Boolean btnState2 = false;
+    private Boolean btnState3 = false;
+    private Boolean btnState4 = false;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,16 @@ public class PowerActivity extends Activity {
 	public void onButton2Click(View view) {
 		ImageButton btnSw2 = (ImageButton)findViewById(R.id.btnSw2);
 		btnState2 = SendButtonToggleToServer(btnSw2,btnState2,"node3");
+	}
+
+	public void onButton4Click(View view) {
+		ImageButton btnSw4 = (ImageButton)findViewById(R.id.btnSw4);
+		btnState4 = SendButtonToggleToServer(btnSw4,btnState4,"A3");
+	}
+	
+	public void onButton3Click(View view) {
+		ImageButton btnSw3 = (ImageButton)findViewById(R.id.btnSw3);
+		btnState3 = SendButtonToggleToServer(btnSw3,btnState3,"A2");
 	}
 	
 	public Boolean SendButtonToggleToServer(ImageButton btnSw, Boolean btnState, String strNode)

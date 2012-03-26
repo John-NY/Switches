@@ -7,8 +7,75 @@
 	    android:orientation="vertical">
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		    android:layout_width="fill_parent"
-		    android:layout_height="fill_parent"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		
+		    <ImageButton
+		        android:id="@+id/btnSw2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:onClick="onButton2Click"
+		        android:src="@drawable/off"
+		        android:text="LIGHT" />
+
+		    <TextView
+		        android:id="@+id/textView2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Staircase Lights"
+		        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		</LinearLayout> <!--  end switch 2 -->
+		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		
+		    <ImageButton
+		        android:id="@+id/btnSw4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:onClick="onButton4Click"
+		        android:src="@drawable/off"
+		        android:text="LIGHT" />
+
+		    <TextView
+		        android:id="@+id/textView4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Living Room Light"
+		        android:textAppearance="?android:attr/textAppearanceLarge" />
+		    
+		</LinearLayout> <!--  end living room light switch -->
+		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		
+		    <ImageButton
+		        android:id="@+id/btnSw3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:onClick="onButton3Click"
+		        android:src="@drawable/off"
+		        android:text="Switch" />
+
+		    
+		    <TextView
+		        android:id="@+id/textView3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Kitchen Fan"
+		        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		</LinearLayout> <!--  end fan switch -->
+		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
 		    android:orientation="horizontal">
 		    
 		    <ImageButton
@@ -19,12 +86,12 @@
 		        android:src="@drawable/off"
 		        android:text="Switch" />
 
-		    <ImageButton
-		        android:id="@+id/btnSw2"
+		    <TextView
+		        android:id="@+id/textView1"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:onClick="onButton2Click"
-		        android:src="@drawable/off"
-		        android:text="Switch" />
-		</LinearLayout> <!-- end strip -->
+		        android:text="Printer"
+		        android:textAppearance="?android:attr/textAppearanceLarge" />
+		</LinearLayout> <!-- end printer switch -->
+		
 	</LinearLayout> <!-- end power frame -->	

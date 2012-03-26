@@ -50,7 +50,7 @@ public class SwitchesActivity extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
 
-        tabHost.setCurrentTab(3);
+        tabHost.setCurrentTab(0);
     }
 
 }	
